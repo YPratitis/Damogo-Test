@@ -5,11 +5,25 @@ import { Logo } from '../../assets'
 const SignIn = () => {
     return (
         <View>
-            <Logo />
-            <Text>Login</Text>
-            <TextInput>Kata sandi</TextInput>
+            <View style={styles.logo}>
+                <Logo />
+            </View>
+            <View style={styles.login}>
+                <Text style={styles.txtLogin}>Loginn</Text>
+            </View>
+            
+            <TextInput 
+                style={styles.txtInput}
+                placeholder="Username"></TextInput>
+            <View styles={{color: "yellow"}}>
+                <TextInput 
+                style={styles.txtInput}
+                placeholder="Kata Sandi"></TextInput>
+            </View>
+
             <TouchableOpacity 
-                style={styles.button}>
+                style={styles.button}
+                >
                 <Text>Masuk</Text>
             </TouchableOpacity>
             <TouchableOpacity 
@@ -23,17 +37,36 @@ const SignIn = () => {
 export default SignIn;
 
 const styles = StyleSheet.create({
+    logo :{ 
+        backgroundColor: "red",
+        alignItems: 'center',
+        marginTop: 137,
+    },
+    login: {
+        marginTop: 38,
+        backgroundColor: 'pink'
+    },
+    txtLogin: {
+        fontSize: 28,
+        fontWeight: "700",
+    },
     button: {
         alignItems: "center",
         width: 382,
         height: 48,
         borderRadius: 3,
-        left: 16,
         backgroundColor: "#00A3E0",
-        padding: 10
+        padding: 10,
+        justifyContent: 'center'
       },
     button2: {
         alignItems: "center",
+        justifyContent: 'center',
         backgroundColor: "#FFFFFFFF"
+    },
+    txtInput: {
+        alignItems: 'center',
+        fontSize: 18,
+        textDecorationLine: 'underline'
     }
 })
